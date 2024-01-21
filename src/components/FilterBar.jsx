@@ -1,17 +1,12 @@
-const FilterBar = ({
-  filters,
-  clearFilters,
-  removeFilter,
-  selectedFilters,
-}) => {
-  if (selectedFilters.length === 0) {
+const FilterBar = ({ filters, clearFilters, removeFilter }) => {
+  if (filters.length === 0) {
     return null; // Don't render the component if there are no selected filters
   }
   return (
     <div className="bg-white shadow-lg text-DesaturatedDarkCyan p-4 mb-4 rounded-md w-full">
       <div className="flex items-center justify-between">
         <div className="flex">
-          {selectedFilters.map((filter, index) => (
+          {filters.map((filter, index) => (
             <div
               key={index}
               className="bg-FilterGrayishCyan rounded-md font-bold cursor-pointer mr-2 flex items-center"
